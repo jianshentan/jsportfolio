@@ -1,0 +1,145 @@
+body {
+    font-family: 'Droid Sans', arial, sans-serif;
+    margin: 0px;
+    min-width: 800px;
+}
+
+hr {
+    background-color: #ccc;
+    height: 2px;
+    border: none;
+}
+
+.content {
+    position: relative;
+    text-align: left;
+    margin: 100px auto;
+    width: 800px;
+}
+
+/* ---- NAV ---- */
+.nav {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    top: 0px;
+    background-color: rgba(255,255,255,0.4);
+    z-index: 1000;
+}
+
+#navlist {
+    text-align: center;
+    font-weight: bold;
+    -webkit-padding-start: 0px;
+}
+
+#navlist #nav-build { border: 3px solid #282899; color: #282899; }
+#navlist #nav-hack { border: 3px solid #e56e1f; color: #e56e1f; }
+#navlist #nav-work { border: 3px solid #15cc19; color: #15cc19; }
+#navlist #nav-about { border: 3px solid #6d6d6d; color: #6d6d6d; }
+
+#navlist #nav-build.active { background-color: rgba(40,40,153,0.2); }
+#navlist #nav-hack.active { background-color: rgba(153,40,40,0.2); }
+#navlist #nav-work.active { background-color: rgba(40,153,40,0.2); }
+#navlist #nav-about.active { background-color: rgba(180,180,180,0.2); }
+
+#navlist li {
+    display: inline;
+}
+
+#navlist .navbtn {
+    display: inline;
+    padding: 6px 20px;
+    margin: 5px 15px;
+    text-decoration: none;
+}
+#navlist li div:hover { cursor: pointer; }
+
+
+/* ---- BUILD ---- */
+.build {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.hero {
+    width: 800px;
+    height: 250px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.hero .hero-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.hero .hero-overlay { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    text-align: left;
+    color: white;
+    background-color: rgba(80, 120, 203, 0.6);
+}
+.hero .hero-overlay .title {
+    font-weight: bold;
+    font-size: 18px;
+    position: relative; 
+    padding: 20px 20px 0px 20px;
+}
+.hero .hero-overlay .desc {
+    font-size: 15px;
+    position: relative; 
+    padding: 0px 20px 20px 20px;
+}
+
+#hero-dogcase .hero-image { background-image: url('/images/build/dogcase.png'); }
+
+#hero-horsetable .hero-image { 
+    background-image: url('/images/build/horsetable.png'); 
+    background-size: 700px;
+    background-repeat: no-repeat;
+}
+#hero-vaderstool .hero-image { 
+    background-image: url('/images/build/vaderstool.png'); 
+    background-repeat: no-repeat;
+    background-size: 450px;
+    background-position: 250 -50;
+}
+
+/* ---- Show More ----- */
+.showmore-separator{
+    margin: 80px 0;
+}
+
+.showmore-tile {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    display: inline-block;
+    margin: 8px 8px;
+}
+
+.showmore-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: blue;
+}
+
+.showmore-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/* ---- Dogcase ---- */
+
+.dogcase {
+    line-height: 150%;
+}
