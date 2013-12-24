@@ -34,6 +34,8 @@ app.get('/build', routes.index);
 app.get('/dogcase', routes.index);
 app.get('/horsetable', routes.index);
 app.get('/vaderstool', routes.index);
+app.get('/continuousprofiles', routes.index);
+app.get('/benches', routes.index);
 
 app.get('/hack', routes.index);
 app.get('/work', routes.index);

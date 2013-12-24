@@ -16,6 +16,10 @@ $(document).ready(function() {
                 $("#nav-build").addClass("active");
                 $(".content").load("html/dogcase.html", function() {initDogcase();});
                 break;
+            case "horsetable":
+                $("#nav-build").addClass("active");
+                $(".content").load("html/horsetable.html", function() {initHorsetable();});
+                break;
             case "hack":
                 $("#nav-hack").addClass("active");
                 $(".content").load("html/hack.html", function() {initHack();});
@@ -40,35 +44,46 @@ $(document).ready(function() {
 function initBuild() {
     $(".hero-overlay").hide();
     $(".hero").each(function(i) {
+
         $(this).hover(function() {
             $(this).children(".hero-overlay").show();
         }, function() {
             $(this).children(".hero-overlay").hide();
         });
+
+        $(this).click(function() {document.location.href="/"+$(this).attr("project");});
     });
+};
+
+function initShowMore(curr) {
+    var projects = ["benches", "pitbullbox", "dogcase", "horsetable", "vaderstool", "continuousprofiles"];
+    for (var i=0; i<projects.length; i++) {
+        if (curr === projects[i]) continue;
+        var holder = $("<div>");
+        holder.load("html/showmore_"+projects[i]+".html", function() {
+            var tile = $(this).children(".showmore-tile"); 
+            $(".showmore").append(tile);
+            tile.children(".showmore-overlay").hide();
+            tile.hover(function() {
+                $(this).children(".showmore-overlay").show();
+            }, function() {
+                $(this).children(".showmore-overlay").hide();
+            });
+            tile.click(function() {document.location.href="/"+tile.attr("project");});
+        });
+    }
 };
 
 function initHack() {
 
 };
 
-function initShowMore() {
-    var projects = ["benches", "pitbullbox", "dogcase", "horsetable", "vaderstool"];
-    for (var i=0; i<projects.length; i++) {
-        var tile = $("<div>");
-        tile.load("html/showmore_"+projects[i]+".html", function() {
-            $(".showmore").append($(this).children(".showmore-tile"));
-        });
-    }
-    
-};
-
 function initDogcase() {
-    initShowMore();
+    initShowMore("dogcase");
 };
 
 function initHorsetable() {
-
+    initShowMore("horsetable");
 };
 
 function initVaderstool() {
