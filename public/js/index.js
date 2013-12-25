@@ -20,6 +20,10 @@ $(document).ready(function() {
                 $("#nav-build").addClass("active");
                 $(".content").load("html/horsetable.html", function() {initHorsetable();});
                 break;
+            case "continuousprofiles":
+                $("#nav-build").addClass("active");
+                $(".content").load("html/continuousprofiles.html", function() {initContinuousprofiles();});
+                break;
             case "hack":
                 $("#nav-hack").addClass("active");
                 $(".content").load("html/hack.html", function() {initHack();});
@@ -44,13 +48,11 @@ $(document).ready(function() {
 function initBuild() {
     $(".hero-overlay").hide();
     $(".hero").each(function(i) {
-
         $(this).hover(function() {
             $(this).children(".hero-overlay").show();
         }, function() {
             $(this).children(".hero-overlay").hide();
         });
-
         $(this).click(function() {document.location.href="/"+$(this).attr("project");});
     });
 };
@@ -75,7 +77,14 @@ function initShowMore(curr) {
 };
 
 function initHack() {
-
+    $(".dropdown-btn").each(function(i) {
+        $(this).click(function() {
+            $(this).parent().parent().parent().children(".desc").slideToggle();
+            var downPath = "/images/misc/dropdown_down.png";
+            var newPath = ($(this).attr("src") == downPath) ? "/images/misc/dropdown_up.png" : "/images/misc/dropdown_down.png";
+            $(this).attr("src", newPath);
+        });
+    });
 };
 
 function initDogcase() {
@@ -84,6 +93,10 @@ function initDogcase() {
 
 function initHorsetable() {
     initShowMore("horsetable");
+};
+
+function initContinuousprofiles() {
+    initShowMore("continuousprofiles");
 };
 
 function initVaderstool() {

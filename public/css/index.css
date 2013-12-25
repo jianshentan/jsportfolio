@@ -25,7 +25,7 @@ hr {
     text-align: center;
     padding: 10px 0px;
     top: 0px;
-    background-color: rgba(255,255,255,0.4);
+    background-color: rgba(255,255,255,0.8);
     z-index: 1000;
 }
 
@@ -155,3 +155,79 @@ hr {
     text-align: center;
 }
 
+/* ---- Continuousprofiles ---- */
+.continuousprofiles_name {
+    display: inline-block;
+    width: 157px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.continuousprofiles_personalculture_img {
+    display: inline-block;
+}
+.continuousprofiles_personalculture_desc {
+    display: inline-block;
+    width: 250px;
+    margin-left: 40px;
+    vertical-align: top;
+}
+
+/* ---- Hack ---- */
+.hack {
+    margin: 0 auto;
+    width: 700px;
+}
+
+.hack .entry {
+    padding: 20px; 
+}
+.hack .entry:hover { background-color: #eee; }
+
+.hack .tab {
+    height: 70px;
+    width: 100%;
+}
+
+.hack .tab img {
+    display: inline-block;
+}
+
+.hack .tab .text {
+    margin: 0 16px;
+    display: inline-block;
+    vertical-align: top;
+    width: 530px;
+}
+
+.hack .tab .text .title {
+    font-size: 1.1em;
+    line-height: 25px;
+}
+
+.hack .tab .text .summary {
+    line-height: 20px;
+}
+
+.hack .tab .dropdown {
+    width: 20px;
+    height: 100%;;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+.hack .tab .dropdown-btn {
+    margin: 0 auto;
+    position: absolute;
+    top: 40%;
+}
+.hack .tab .dropdown-btn:hover { cursor: pointer; }
+
+.hack .desc {
+    margin-left: 90px;
+    margin-right: 40px;
+    margin-top: 16px;
+    display: none;
+    line-height: 20px;
+}
