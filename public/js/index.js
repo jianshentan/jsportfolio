@@ -4,6 +4,7 @@ $(document).ready(function() {
         var route = window.location.pathname.split('/');
         route = route[route.length-1];
         switch (route) {
+            // BUILD
             case "":
                 $(".content").load("html/build.html", function() {initBuild();});
                 $("#nav-build").addClass("active");
@@ -20,14 +21,42 @@ $(document).ready(function() {
                 $("#nav-build").addClass("active");
                 $(".content").load("html/horsetable.html", function() {initHorsetable();});
                 break;
+            case "vaderstool":
+                $("#nav-build").addClass("active");
+                $(".content").load("html/vaderstool.html", function() {initVaderstool();});
+                break;
             case "continuousprofiles":
                 $("#nav-build").addClass("active");
                 $(".content").load("html/continuousprofiles.html", function() {initContinuousprofiles();});
                 break;
+
+            // HACK
             case "hack":
                 $("#nav-hack").addClass("active");
                 $(".content").load("html/hack.html", function() {initHack();});
                 break;
+            case "popgossipusa":
+                $("#nav-hack").addClass("active");
+                $(".content").load("html/hack.html", function() {initHack("popgossipusa");});
+                break;
+            case "acronymdictionary":
+                $("#nav-hack").addClass("active");
+                $(".content").load("html/hack.html", function() {initHack("acronymdictionary");});
+                break;
+            case "towergame":
+                $("#nav-hack").addClass("active");
+                $(".content").load("html/hack.html", function() {initHack("towergame");});
+                break;
+            case "freebeyonce":
+                $("#nav-hack").addClass("active");
+                $(".content").load("html/hack.html", function() {initHack("freebeyonce");});
+                break;
+            case "zobeide":
+                $("#nav-hack").addClass("active");
+                $(".content").load("html/zobeide.html", function() {initZobeide();});
+                break;
+
+            // WORK
             case "work":
                 $("#nav-work").addClass("active");
                 break;
@@ -58,7 +87,7 @@ function initBuild() {
 };
 
 function initShowMore(curr) {
-    var projects = ["benches", "pitbullbox", "dogcase", "horsetable", "vaderstool", "continuousprofiles"];
+    var projects = [/*"benches", "pitbullbox"*/, "dogcase", "horsetable", "vaderstool", "continuousprofiles"];
     for (var i=0; i<projects.length; i++) {
         if (curr === projects[i]) continue;
         var holder = $("<div>");
@@ -76,15 +105,33 @@ function initShowMore(curr) {
     }
 };
 
-function initHack() {
-    $(".dropdown-btn").each(function(i) {
+function initHack(project) {
+    $(".option-btn").each(function(i) {
         $(this).click(function() {
-            $(this).parent().parent().parent().children(".desc").slideToggle();
-            var downPath = "/images/misc/dropdown_down.png";
-            var newPath = ($(this).attr("src") == downPath) ? "/images/misc/dropdown_up.png" : "/images/misc/dropdown_down.png";
-            $(this).attr("src", newPath);
+            var projectWrapper = $(this).parent().parent().parent();
+            if (projectWrapper.attr("project") === "zobeide") {
+                document.location.href="/"+projectWrapper.attr("project");
+            } else {
+                projectWrapper.children(".desc").slideToggle();
+                var downPath = "/images/misc/dropdown_down.png";
+                var newPath = ($(this).attr("src") == downPath) ? "/images/misc/dropdown_up.png" : "/images/misc/dropdown_down.png";
+                $(this).attr("src", newPath);
+            }
         });
     });
+    
+    if (project) {
+        $(".entry").each(function(i) {
+            if ($(this).attr("project") === project) {
+                $(this).children(".desc").slideToggle(function() {
+                    $(window).scroll(0, $(this).offset().top);
+                    $('html,body').animate(
+                        { scrollTop: $(this).parent().offset().top - 80 } // 80 is the top margin
+                      , 'slow');
+                });
+            }
+        });
+    }
 };
 
 function initDogcase() {
@@ -100,5 +147,5 @@ function initContinuousprofiles() {
 };
 
 function initVaderstool() {
-
+    initShowMore("vaderstool");
 };

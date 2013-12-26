@@ -29,6 +29,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+// NOTE: routing actually happens on the client (index.js)
+
 app.get('/', routes.index);
 app.get('/build', routes.index);
 app.get('/dogcase', routes.index);
@@ -38,6 +40,12 @@ app.get('/continuousprofiles', routes.index);
 app.get('/benches', routes.index);
 
 app.get('/hack', routes.index);
+app.get('/popgossipusa', routes.index);
+app.get('/acronymdictionary', routes.index);
+app.get('/zobeide', routes.index);
+app.get('/towergame', routes.index);
+app.get('/freebeyonce', routes.index);
+
 app.get('/work', routes.index);
 app.get('/about', routes.index);
 

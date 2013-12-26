@@ -16,6 +16,7 @@ hr {
     margin: 100px auto;
     width: 800px;
     font-size: 14px;
+    line-height: 150%;
 }
 
 /* ---- NAV ---- */
@@ -90,7 +91,6 @@ hr {
 }
 
 .hero .hero-overlay .title {
-    font-weight: bold;
     font-size: 18px;
     position: relative; 
     padding: 20px 20px 0px 20px;
@@ -147,7 +147,6 @@ hr {
 /* ---- Dogcase ---- */
 
 .dogcase {
-    line-height: 150%;
 }
 
 /* ---- Horsetable ---- */
@@ -171,6 +170,27 @@ hr {
     width: 250px;
     margin-left: 40px;
     vertical-align: top;
+}
+
+/* ---- Vaderstool ---- */
+.vaderstool {
+    line-height: 150%;
+}
+
+.diagram {
+    text-align: right;
+}
+
+.diagram_img {
+    display: inline-block;
+}
+
+.diagram_desc {
+    text-align: left;
+    display: inline-block;
+    width: 450px;
+    vertical-align: top;
+    margin-left: 50px;
 }
 
 /* ---- Hack ---- */
@@ -209,20 +229,20 @@ hr {
     line-height: 20px;
 }
 
-.hack .tab .dropdown {
+.hack .tab .option {
     width: 20px;
-    height: 100%;;
+    height: 100%;
     display: inline-block;
     vertical-align: top;
     position: relative;
 }
 
-.hack .tab .dropdown-btn {
+.hack .tab .option-btn {
     margin: 0 auto;
     position: absolute;
     top: 40%;
 }
-.hack .tab .dropdown-btn:hover { cursor: pointer; }
+.hack .tab .option-btn:hover { cursor: pointer; }
 
 .hack .desc {
     margin-left: 90px;
@@ -230,4 +250,19 @@ hr {
     margin-top: 16px;
     display: none;
     line-height: 20px;
+}
+
+.hack-back-btn {
+
+}
+.hack-back-btn-top {
+    margin-bottom: 40px;
+}
+.hack-back-btn-bottom {
+    margin-top: 40px;
+}
+
+/* ---- Zobeide ---- */
+.zobeide-center {
+    text-align: center;
 }
