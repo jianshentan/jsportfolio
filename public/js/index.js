@@ -87,21 +87,72 @@ function initBuild() {
 };
 
 function initShowMore(curr) {
-    var projects = [/*"benches", "pitbullbox"*/, "dogcase", "horsetable", "vaderstool", "continuousprofiles"];
+    var projects = [/*"benches", "pitbullbox",*/ "dogcase", "horsetable", "vaderstool", "continuousprofiles"];
+    var projectInfo = {
+        /* "benches" : {
+            "path"  : "/images/tiles/benches.png"
+          , "title" : "Benches"
+          , "desc"  : "Some text about benches here."
+        }
+      , "pitbullbox" : {
+            "path"  : "/images/tiles/pitbullbox.png"
+          , "title" : "Pitbull Box"
+          , "desc"  : "Some text about pitbull here."
+        }
+      , */ 
+        "dogcase" : {
+            "path"  : "/images/tiles/dogcase.png"
+          , "title" : "Dogcase"
+          , "desc"  : "Some text about dogcase here."
+        }
+      , "horsetable" : {
+            "path"  : "/images/tiles/horsetable.png"
+          , "title" : "Horse Table"
+          , "desc"  : "Some text about horse table here."
+        }  
+      , "vaderstool" : {
+            "path"  : "/images/tiles/vaderstool.png"
+          , "title" : "Vader Stool"
+          , "desc"  : "Some text about Vader here."
+        }
+      , "continuousprofiles" : {
+            "path"  : "/images/tiles/continuousprofiles.png"
+          , "title" : "Continuous Profiles"
+          , "desc"  : "Some text about continuous profiles here."
+        }
+    };
+
     for (var i=0; i<projects.length; i++) {
-        if (curr === projects[i]) continue;
+        if (curr === projects[i]) {continue};
         var holder = $("<div>");
-        holder.load("html/showmore_"+projects[i]+".html", function() {
-            var tile = $(this).children(".showmore-tile"); 
-            $(".showmore").append(tile);
-            tile.children(".showmore-overlay").hide();
-            tile.hover(function() {
-                $(this).children(".showmore-overlay").show();
-            }, function() {
-                $(this).children(".showmore-overlay").hide();
-            });
-            tile.click(function() {document.location.href="/"+tile.attr("project");});
-        });
+
+        holder.load("html/showmore.html", function(j) {
+            return function() {
+                var tile = $(this).children(".showmore-tile"); 
+
+                var projectName = projects[j];
+                var projectPath = projectInfo[projectName].path;
+                var projectTitle = projectInfo[projectName].title;
+                var projectDesc = projectInfo[projectName].desc;
+
+                tile.attr("project", projects[j]);
+                tile.children(".showmore-image").attr("src", projectPath);
+                tile.children(".showmore-overlay")
+                    .children(".showmore-title").html(projectTitle);
+                tile.children(".showmore-overlay")
+                    .children(".showmore-desc").html(projectDesc);
+
+                $(".showmore").append(tile);
+                tile.children(".showmore-overlay").hide();
+
+                tile.hover(function() {
+                    $(this).children(".showmore-overlay").show();
+                }, function() {
+                    $(this).children(".showmore-overlay").hide();
+                });
+                tile.click(function() {document.location.href="/"+tile.attr("project");});
+            }
+        }(i));
     }
 };
 
