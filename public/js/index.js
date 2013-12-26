@@ -43,6 +43,10 @@ $(document).ready(function() {
                 $("#nav-hack").addClass("active");
                 $(".content").load("html/hack.html", function() {initHack("acronymdictionary");});
                 break;
+            case "zobeide":
+                $("#nav-hack").addClass("active");
+                $(".content").load("html/zobeide.html", function() {initHack("zobeide");});
+                break;
             case "towergame":
                 $("#nav-hack").addClass("active");
                 $(".content").load("html/hack.html", function() {initHack("towergame");});
@@ -51,15 +55,21 @@ $(document).ready(function() {
                 $("#nav-hack").addClass("active");
                 $(".content").load("html/hack.html", function() {initHack("freebeyonce");});
                 break;
-            case "zobeide":
+            case "happypoliticians":
                 $("#nav-hack").addClass("active");
-                $(".content").load("html/zobeide.html", function() {initHack("zobeide");});
-                break;
+                $(".content").load("html/hack.html", function() {initHack("happypoliticians");});
+           
 
             // WORK
             case "work":
                 $("#nav-work").addClass("active");
+                $(".content").load("html/work.html", function() {initWork();});
                 break;
+            case "hopper":
+                $("#nav-work").addClass("active");
+                $(".content").load("html/hopper.html", function() {initWork();});
+                break
+
             case "about":
                 $("#nav-about").addClass("active");
                 break;
@@ -156,6 +166,7 @@ function initShowMore(curr) {
     }
 };
 
+function initWork(project) { initHack(project); };
 function initHack(project) {
     $(".dropdown-btn").each(function(i) {
         $(this).click(function() {

@@ -193,43 +193,44 @@ hr {
     margin-left: 50px;
 }
 
-/* ---- Hack ---- */
+/* ---- Hack & Work ---- */
+.work, 
 .hack {
     margin: 0 auto;
     width: 700px;
 }
 
-.hack .entry {
+.entry {
     padding: 20px; 
 }
-.hack .entry:hover { background-color: #eee; }
+.entry:hover { background-color: #eee; }
 
-.hack .tab {
+.tab {
     height: 70px;
     width: 100%;
 }
 
-.hack .tab img {
+.tab img {
     display: inline-block;
 }
 
-.hack .tab .text {
+.tab .text {
     margin: 0 16px;
     display: inline-block;
     vertical-align: top;
     width: 530px;
 }
 
-.hack .tab .text .title {
+.tab .text .title {
     font-size: 1.1em;
     line-height: 25px;
 }
 
-.hack .tab .text .summary {
+.tab .text .summary {
     line-height: 20px;
 }
 
-.hack .tab .option {
+.tab .option {
     width: 20px;
     height: 100%;
     display: inline-block;
@@ -237,7 +238,7 @@ hr {
     position: relative;
 }
 
-.hack .tab .option-btn {
+.tab .option-btn {
     margin: 0 auto;
     position: absolute;
     top: 40%;
@@ -252,13 +253,13 @@ hr {
     line-height: 20px;
 }
 
-.hack-back-btn {
+.back-btn {
 
 }
-.hack-back-btn-top {
+.back-btn-top {
     margin-bottom: 40px;
 }
-.hack-back-btn-bottom {
+.back-btn-bottom {
     margin-top: 40px;
 }
 

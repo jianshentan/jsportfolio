@@ -45,8 +45,11 @@ app.get('/acronymdictionary', routes.index);
 app.get('/zobeide', routes.index);
 app.get('/towergame', routes.index);
 app.get('/freebeyonce', routes.index);
+app.get('/happypoliticians', routes.index);
 
 app.get('/work', routes.index);
+app.get('/hopper', routes.index);
+
 app.get('/about', routes.index);
 
 http.createServer(app).listen(app.get('port'), function(){
