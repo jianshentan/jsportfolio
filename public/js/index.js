@@ -53,7 +53,7 @@ $(document).ready(function() {
                 break;
             case "zobeide":
                 $("#nav-hack").addClass("active");
-                $(".content").load("html/zobeide.html", function() {initZobeide();});
+                $(".content").load("html/zobeide.html", function() {initHack("zobeide");});
                 break;
 
             // WORK
@@ -157,20 +157,24 @@ function initShowMore(curr) {
 };
 
 function initHack(project) {
-    $(".option-btn").each(function(i) {
+    $(".dropdown-btn").each(function(i) {
         $(this).click(function() {
             var projectWrapper = $(this).parent().parent().parent();
-            if (projectWrapper.attr("project") === "zobeide") {
-                document.location.href="/"+projectWrapper.attr("project");
-            } else {
-                projectWrapper.children(".desc").slideToggle();
-                var downPath = "/images/misc/dropdown_down.png";
-                var newPath = ($(this).attr("src") == downPath) ? "/images/misc/dropdown_up.png" : "/images/misc/dropdown_down.png";
-                $(this).attr("src", newPath);
-            }
+            projectWrapper.children(".desc").slideToggle();
+            var downPath = "/images/misc/dropdown_down.png";
+            var newPath = ($(this).attr("src") == downPath) ? 
+                "/images/misc/dropdown_up.png" : "/images/misc/dropdown_down.png";
+            $(this).attr("src", newPath);
         });
     });
     
+    $(".learnmore-btn").each(function(i) {
+        $(this).click(function() {
+            var projectWrapper = $(this).parent().parent().parent();
+            document.location.href="/"+projectWrapper.attr("project");
+        });
+    });
+   
     if (project) {
         $(".entry").each(function(i) {
             if ($(this).attr("project") === project) {
