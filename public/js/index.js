@@ -68,7 +68,12 @@ $(document).ready(function() {
             case "hopper":
                 $("#nav-work").addClass("active");
                 $(".content").load("html/hopper.html", function() {initWork();});
+                break;
+            case "freefoodatbrown":
+                $("#nav-work").addClass("active");
+                $(".content").load("html/freefoodatbrown.html", function() {initWork();});
                 break
+
 
             case "about":
                 $("#nav-about").addClass("active");

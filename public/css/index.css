@@ -243,9 +243,9 @@ hr {
     position: absolute;
     top: 40%;
 }
-.hack .tab .option-btn:hover { cursor: pointer; }
+.tab .option-btn:hover { cursor: pointer; }
 
-.hack .desc {
+.entry .desc {
     margin-left: 90px;
     margin-right: 40px;
     margin-top: 16px;
