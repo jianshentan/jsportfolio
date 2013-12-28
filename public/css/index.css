@@ -26,6 +26,7 @@ hr {
     width: 800px;
     font-size: 14px;
     line-height: 150%;
+    display: none;
 }
 
 /* ---- NAV ---- */

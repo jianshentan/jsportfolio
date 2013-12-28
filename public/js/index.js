@@ -102,6 +102,9 @@ $(document).ready(function() {
                 });
             }
         });
+
+        // show footer
+        $(".footer").show();
     });
 });
 
