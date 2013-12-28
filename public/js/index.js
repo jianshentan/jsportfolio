@@ -1,5 +1,8 @@
 $(document).ready(function() {
     $(".nav").load("html/nav.html", function() {
+        // show footer
+        $(".footer").show();
+
         // start routing once navbar is done
         var route = window.location.pathname.split('/');
         route = route[route.length-1];
@@ -103,8 +106,6 @@ $(document).ready(function() {
             }
         });
 
-        // show footer
-        $(".footer").show();
     });
 });
 
