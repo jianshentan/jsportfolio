@@ -19,6 +19,15 @@ hr {
     line-height: 150%;
 }
 
+.footer {
+    position: relative;
+    text-align: center;
+    margin: 100px auto;
+    width: 800px;
+    font-size: 14px;
+    line-height: 150%;
+}
+
 /* ---- NAV ---- */
 .nav {
     position: fixed;
@@ -44,7 +53,7 @@ hr {
 #navlist #nav-build.active { background-color: rgba(40,40,153,0.2); }
 #navlist #nav-hack.active { background-color: rgba(153,40,40,0.2); }
 #navlist #nav-work.active { background-color: rgba(40,153,40,0.2); }
-#navlist #nav-about.active { background-color: rgba(180,180,180,0.2); }
+#navlist #nav-about.active { background-color: rgba(180,180,180,0.4); }
 
 #navlist li {
     display: inline;
@@ -198,6 +207,7 @@ hr {
 .hack {
     margin: 0 auto;
     width: 700px;
+    min-height: 500px;
 }
 
 .entry {
@@ -266,4 +276,21 @@ hr {
 /* ---- Zobeide ---- */
 .zobeide-center {
     text-align: center;
+}
+
+/* ---- Nola ---- */
+.nola-center {
+    text-align: center;
+}
+
+/* ---- About ---- */
+.about {
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.about .my-name {
+    font-size: 20px;
+    line-height: 38px;
 }

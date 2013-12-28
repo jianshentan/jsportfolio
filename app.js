@@ -5,6 +5,7 @@
 
 var express = require('express');
 var routes = require('./routes');
+var tracker = require('./routes/tracker');
 var http = require('http');
 var path = require('path');
 
@@ -29,29 +30,32 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+// Start the track log 
+tracker.createLog();
+
 // NOTE: routing actually happens on the client (index.js)
 
 app.get('/', routes.index);
-app.get('/build', routes.index);
-app.get('/dogcase', routes.index);
-app.get('/horsetable', routes.index);
-app.get('/vaderstool', routes.index);
-app.get('/continuousprofiles', routes.index);
-app.get('/benches', routes.index);
+app.get('/about', routes.about);
 
-app.get('/hack', routes.index);
-app.get('/popgossipusa', routes.index);
-app.get('/acronymdictionary', routes.index);
-app.get('/zobeide', routes.index);
-app.get('/towergame', routes.index);
-app.get('/freebeyonce', routes.index);
-app.get('/happypoliticians', routes.index);
+app.get('/build', routes.build);
+app.get('/dogcase', routes.dogcase);
+app.get('/horsetable', routes.horsetable);
+app.get('/vaderstool', routes.vaderstool);
+app.get('/continuousprofiles', routes.continuousprofiles);
 
-app.get('/work', routes.index);
-app.get('/hopper', routes.index);
-app.get('/freefoodatbrown', routes.index);
+app.get('/hack', routes.hack);
+app.get('/popgossipusa', routes.popgossipusa);
+app.get('/acronymdictionary', routes.acronymdictionary);
+app.get('/zobeide', routes.zobeide);
+app.get('/towergame', routes.towergame);
+app.get('/freebeyonce', routes.freebeyonce);
+app.get('/happypoliticians', routes.happypoliticians);
 
-app.get('/about', routes.index);
+app.get('/work', routes.work);
+app.get('/hopper', routes.hopper);
+app.get('/freefoodatbrown', routes.freefoodatbrown);
+app.get('/nola', routes.nola);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -4,11 +4,8 @@ $(document).ready(function() {
         var route = window.location.pathname.split('/');
         route = route[route.length-1];
         switch (route) {
+           
             // BUILD
-            case "":
-                $(".content").load("html/build.html", function() {initBuild();});
-                $("#nav-build").addClass("active");
-                break;
             case "build":
                 $("#nav-build").addClass("active");
                 $(".content").load("html/build.html", function() {initBuild();});
@@ -58,6 +55,7 @@ $(document).ready(function() {
             case "happypoliticians":
                 $("#nav-hack").addClass("active");
                 $(".content").load("html/hack.html", function() {initHack("happypoliticians");});
+                break;
            
 
             // WORK
@@ -72,22 +70,46 @@ $(document).ready(function() {
             case "freefoodatbrown":
                 $("#nav-work").addClass("active");
                 $(".content").load("html/freefoodatbrown.html", function() {initWork();});
-                break
+                break;
+            case "nola":
+                $("#nav-work").addClass("active");
+                $(".content").load("html/nola.html", function() {initWork();});
+                break;
 
-
+            // ABOUT
+            case "":
+                $(".content").load("html/about.html", function() {initAbout();});
+                $(".footer").hide();
+                break;
             case "about":
-                $("#nav-about").addClass("active");
+                $(".content").load("html/about.html", function() {initAbout();});
+                $(".footer").hide();
                 break;
         }
 
-        // activate nav buttons
-        $("#nav-build").click(function() { document.location.href="/build"; });
-        $("#nav-hack").click(function() { document.location.href="/hack"; });
-        $("#nav-work").click(function() { document.location.href="/work"; });
-        $("#nav-about").click(function() { document.location.href="/about"; });
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+        // activate click and hover on navbtns
+        $(".navbtn").each(function(i) {
+            $(this).click(function() {
+                document.location.href="/"+$(this).attr("category");
+            });
+            if (!$(this).hasClass("active")) {
+                $(this).hover(function() {
+                    $(this).addClass("active");       
+                }, function() {
+                    $(this).removeClass("active");
+                });
+            }
+        });
     });
-     
 });
+
+function initAbout() {
+    $(".nav").css({position: "relative", top: "260px"});
+    $(".content").css("margin-top", "0px");
+    $(".about > b").css("margin-top", "30px");
+};
 
 function initBuild() {
     $(".hero-overlay").hide();
@@ -118,22 +140,22 @@ function initShowMore(curr) {
         "dogcase" : {
             "path"  : "/images/tiles/dogcase.png"
           , "title" : "Dogcase"
-          , "desc"  : "Some text about dogcase here."
+          , "desc"  : "Transport your dogs in this iconic piece of luggage."
         }
       , "horsetable" : {
             "path"  : "/images/tiles/horsetable.png"
           , "title" : "Horse Table"
-          , "desc"  : "Some text about horse table here."
+          , "desc"  : "A multi-purpose furniture objects. Also a horse."
         }  
       , "vaderstool" : {
             "path"  : "/images/tiles/vaderstool.png"
           , "title" : "Vader Stool"
-          , "desc"  : "Some text about Vader here."
+          , "desc"  : "Sit on the face of evil."
         }
       , "continuousprofiles" : {
             "path"  : "/images/tiles/continuousprofiles.png"
           , "title" : "Continuous Profiles"
-          , "desc"  : "Some text about continuous profiles here."
+          , "desc"  : "Continuous profiles (profile spun in 360-degrees) of various people."
         }
     };
 
@@ -176,6 +198,8 @@ function initHack(project) {
     $(".dropdown-btn").each(function(i) {
         $(this).click(function() {
             var projectWrapper = $(this).parent().parent().parent();
+            if (!projectWrapper.children(".desc").is(":visible"))
+                $.get("/"+projectWrapper.attr("project"))
             projectWrapper.children(".desc").slideToggle();
             var downPath = "/images/misc/dropdown_down.png";
             var newPath = ($(this).attr("src") == downPath) ? 
