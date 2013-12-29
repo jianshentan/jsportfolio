@@ -113,6 +113,11 @@ function initAbout() {
     $(".nav").css({position: "relative", top: "260px"});
     $(".content").css("margin-top", "0px");
     $(".about > b").css("margin-top", "30px");
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $(".nav").css("top", "400px");
+    }
+
 };
 
 function initBuild() {
