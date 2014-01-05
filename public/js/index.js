@@ -202,18 +202,23 @@ function initShowMore(curr) {
     }
 };
 
-function initWork(project) { initHack(project); };
+function initWork(project) { initHack(project); }; // currently just a hack
 function initHack(project) {
+    /*
+     * -- DEPRECATED --
     $(".dropdown-btn").each(function(i) {
         $(this).click(function() {
             var projectWrapper = $(this).parent().parent().parent();
+
+            // change URL (for server)
             if (!projectWrapper.children(".desc").is(":visible"))
                 $.get("/"+projectWrapper.attr("project"))
+
             projectWrapper.children(".desc").slideToggle();
-            var downPath = "/images/misc/dropdown_down.png";
-            var newPath = ($(this).attr("src") == downPath) ? 
+            var downImgPath = "/images/misc/dropdown_down.png";
+            var newImgPath = ($(this).attr("src") == downImgPath) ? 
                 "/images/misc/dropdown_up.png" : "/images/misc/dropdown_down.png";
-            $(this).attr("src", newPath);
+            $(this).attr("src", newImgPath);
         });
     });
     
@@ -223,7 +228,30 @@ function initHack(project) {
             document.location.href="/"+projectWrapper.attr("project");
         });
     });
-   
+    */
+
+    $(".entry").each(function(i) {
+        $(this).click(function() {
+            if ($(this).attr("entry") == "link")
+                document.location.href="/"+$(this).attr("project");
+            else {
+                var projectWrapper = $(this);
+
+                // change URL (for server)
+                if (!projectWrapper.children(".desc").is(":visible"))
+                    $.get("/"+projectWrapper.attr("project"))
+
+                projectWrapper.children(".desc").slideToggle();
+                var btn = projectWrapper.find(".option-btn");
+                var downImgPath = "/images/misc/dropdown_down.png";
+                var newImgPath = btn.attr("src") == downImgPath ? 
+                    "/images/misc/dropdown_up.png" : "/images/misc/dropdown_down.png";
+                btn.attr("src", newImgPath);
+            }
+
+        });
+    });
+
     if (project) {
         $(".entry").each(function(i) {
             if ($(this).attr("project") === project) {
