@@ -29,6 +29,14 @@ $(document).ready(function() {
                 $("#nav-build").addClass("active");
                 $(".content").load("html/continuousprofiles.html", function() {initContinuousprofiles();});
                 break;
+            case "pitbullbox":
+                $("#nav-build").addClass("active");
+                $(".content").load("html/pitbullbox.html", function() {initPitbullbox();});
+                break;
+            case "rugbench":
+                $("#nav-build").addClass("active");
+                $(".content").load("html/rugbench.html", function() {initRugbench();});
+                break;
 
             // HACK
             case "hack":
@@ -133,20 +141,24 @@ function initBuild() {
 };
 
 function initShowMore(curr) {
-    var projects = [/*"benches", "pitbullbox",*/ "dogcase", "horsetable", "vaderstool", "continuousprofiles"];
+    var projects = [/*"benches", */"rugbench", "pitbullbox", "dogcase", "horsetable", "vaderstool", "continuousprofiles"];
     var projectInfo = {
         /* "benches" : {
             "path"  : "/images/tiles/benches.png"
           , "title" : "Benches"
           , "desc"  : "Some text about benches here."
+        }*/
+       "rugbench" : {
+            "path"  : "/images/tiles/rugbench.png"
+          , "title" : "Rug Bench"
+          , "desc"  : "A fun furniture object!"      
         }
       , "pitbullbox" : {
             "path"  : "/images/tiles/pitbullbox.png"
           , "title" : "Pitbull Box"
-          , "desc"  : "Some text about pitbull here."
+          , "desc"  : "A transportable and beautifully crafted Pitbull shrine."
         }
-      , */ 
-        "dogcase" : {
+      , "dogcase" : {
             "path"  : "/images/tiles/dogcase.png"
           , "title" : "Dogcase"
           , "desc"  : "Transport your dogs in this iconic piece of luggage."
@@ -264,6 +276,14 @@ function initHack(project) {
             }
         });
     }
+};
+
+function initRugbench() {
+    initShowMore("rugbench");
+};
+
+function initPitbullbox() {
+    initShowMore("pitbullbox");
 };
 
 function initDogcase() {

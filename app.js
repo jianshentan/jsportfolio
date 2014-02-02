@@ -39,6 +39,8 @@ app.get('/', routes.index);
 app.get('/about', routes.about);
 
 app.get('/build', routes.build);
+app.get('/rugbench', routes.rugbench);
+app.get('/pitbullbox', routes.pitbullbox);
 app.get('/dogcase', routes.dogcase);
 app.get('/horsetable', routes.horsetable);
 app.get('/vaderstool', routes.vaderstool);

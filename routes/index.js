@@ -25,6 +25,16 @@ exports.about = function(req, res) {
     tracker.increment("about");
 };
 
+exports.rugbench = function(req, res) {
+    res.render('index');
+    tracker.increment("rugbench");
+};
+
+exports.pitbullbox = function(req, res) {
+    res.render('index');
+    tracker.increment("pitbullbox");
+};
+
 exports.dogcase = function(req, res) {
     res.render('index');
     tracker.increment("dogcase");
