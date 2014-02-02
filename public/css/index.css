@@ -215,7 +215,10 @@ hr {
 .entry {
     padding: 20px; 
 }
-.entry:hover { background-color: #eee; }
+.entry:hover { 
+    background-color: #eee; 
+    cursor: pointer;
+}
 
 .tab {
     height: 70px;
@@ -236,6 +239,16 @@ hr {
 .tab .text .title {
     font-size: 1.1em;
     line-height: 25px;
+}
+.tab .text .title b a {
+    color: black;
+    text-decoration: none;
+}
+.hack .tab .text .title b a:hover {
+    color: #e56e1f;
+}
+.work .tab .text .title b a:hover {
+    color: #15cc19;
 }
 
 .tab .text .summary {
