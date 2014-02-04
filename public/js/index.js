@@ -37,6 +37,16 @@ $(document).ready(function() {
                 $("#nav-build").addClass("active");
                 $(".content").load("html/rugbench.html", function() {initRugbench();});
                 break;
+            case "diybench":
+                $("#nav-build").addClass("active");
+                $(".content").load("html/diybench.html", function() {initDiybench();});
+                break;
+            case "sheetsteelseats":
+                $("#nav-build").addClass("active");
+                $(".content").load("html/sheetsteelseats.html", function() {initSheetsteelseats();});
+                break;
+
+
 
             // HACK
             case "hack":
@@ -141,22 +151,27 @@ function initBuild() {
 };
 
 function initShowMore(curr) {
-    var projects = [/*"benches", */"rugbench", "pitbullbox", "dogcase", "horsetable", "vaderstool", "continuousprofiles"];
+    var projects = ["sheetsteelseats", "diybench", "rugbench", "pitbullbox", "dogcase", "horsetable", "vaderstool", "continuousprofiles"];
     var projectInfo = {
-        /* "benches" : {
-            "path"  : "/images/tiles/benches.png"
-          , "title" : "Benches"
-          , "desc"  : "Some text about benches here."
-        }*/
-       "rugbench" : {
+        "sheetsteelseats" : {
+            "path"  : "/images/tiles/sheetsteelseats.png"
+          , "title" : "Sheet Steel Seats"
+          , "desc"  : "A set of obnoxiously designed furniture seating."
+        }
+      , "diybench" : {
+            "path"  : "/images/tiles/diybench.png"
+          , "title" : "DIY Bench"
+          , "desc"  : "A minimalist set of DIY benches."
+        }
+      , "rugbench" : {
             "path"  : "/images/tiles/rugbench.png"
           , "title" : "Rug Bench"
-          , "desc"  : "A fun furniture object!"      
+          , "desc"  : "A fun cylindrical rug bench!"      
         }
       , "pitbullbox" : {
             "path"  : "/images/tiles/pitbullbox.png"
           , "title" : "Pitbull Box"
-          , "desc"  : "A transportable and beautifully crafted Pitbull shrine."
+          , "desc"  : "An easily transportable and beautifully crafted Pitbull shrine."
         }
       , "dogcase" : {
             "path"  : "/images/tiles/dogcase.png"
@@ -276,6 +291,14 @@ function initHack(project) {
             }
         });
     }
+};
+
+function initSheetsteelseats() {
+    initShowMore("sheetsteelseats");
+};
+
+function initDiybench() {
+    initShowMore("diybench");
 };
 
 function initRugbench() {

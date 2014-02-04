@@ -25,6 +25,16 @@ exports.about = function(req, res) {
     tracker.increment("about");
 };
 
+exports.sheetsteelseats = function(req, res) {
+    res.render('index');
+    tracker.increment("sheetsteelseats");
+};
+
+exports.diybench = function(req, res) {
+    res.render('index');
+    tracker.increment("diybench");
+};
+
 exports.rugbench = function(req, res) {
     res.render('index');
     tracker.increment("rugbench");
