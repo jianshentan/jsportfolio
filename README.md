@@ -45,7 +45,7 @@ Decide if the project needs its own page or if can be a drop-down tab
   1.  Create a square thumbnail in png format and save it to /public/images/[hack/work]/. Name the file: "__project-name___thumbnail.png"
   2.  Save the images of this project in png format inside /public/images/[hack/work]/. Name the files using the convention: "__project-name___desc__#__.png"
   3.  Inside /public/html/[hack/work].html, add a section for the project [look at 'towergame' for a reference on how to format a new tab with a project that needs its own page]
-      *  do not forever to give the img inside the '.option' div a 'dropdown-btn' instead of a 'learnmore-btn'
+      *  do not forget to give the img inside the '.option' div a 'dropdown-btn' instead of a 'learnmore-btn'
   4.  Inside /public/js/index.js:
       *  add a 'case' statement to the HACK/WORK section of the switch statement
-  5.  Inside app.js (on the server), add the routing for the project.
+  5.  Inside jianshentan.js (on the server), add the routing for the project.

@@ -65,6 +65,12 @@ exports.continuousprofiles = function(req, res) {
     tracker.increment("continuousprofiles");
 };
 
+
+exports.peoplesmagazinegenerator = function(req, res) {
+    res.render('index');
+    tracker.increment("peoplesmagazinegenerator");
+};
+
 exports.popgossipusa = function(req, res) {
     res.render('index');
     tracker.increment("popgossipusa");

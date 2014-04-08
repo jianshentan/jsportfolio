@@ -53,6 +53,10 @@ $(document).ready(function() {
                 $("#nav-hack").addClass("active");
                 $(".content").load("html/hack.html", function() {initHack();});
                 break;
+            case "peoplesmagazinegenerator":
+                $("#nav-hack").addClass("active");
+                $(".content").load("html/hack.html", function() {initHack("peoplesmagazinegenerator");});
+                break;
             case "popgossipusa":
                 $("#nav-hack").addClass("active");
                 $(".content").load("html/hack.html", function() {initHack("popgossipusa");});
