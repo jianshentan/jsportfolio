@@ -66,9 +66,9 @@ exports.continuousprofiles = function(req, res) {
 };
 
 
-exports.peoplesmagazinegenerator = function(req, res) {
+exports.peoplemagazinegenerator = function(req, res) {
     res.render('index');
-    tracker.increment("peoplesmagazinegenerator");
+    tracker.increment("peoplemagazinegenerator");
 };
 
 exports.popgossipusa = function(req, res) {

@@ -49,7 +49,7 @@ app.get('/vaderstool', routes.vaderstool);
 app.get('/continuousprofiles', routes.continuousprofiles);
 
 app.get('/hack', routes.hack);
-app.get('/peoplesmagazinegenerator', routes.peoplesmagazinegenerator);
+app.get('/peoplemagazinegenerator', routes.peoplemagazinegenerator);
 app.get('/popgossipusa', routes.popgossipusa);
 app.get('/acronymdictionary', routes.acronymdictionary);
 app.get('/zobeide', routes.zobeide);

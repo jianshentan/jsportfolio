@@ -53,9 +53,9 @@ $(document).ready(function() {
                 $("#nav-hack").addClass("active");
                 $(".content").load("html/hack.html", function() {initHack();});
                 break;
-            case "peoplesmagazinegenerator":
+            case "peoplemagazinegenerator":
                 $("#nav-hack").addClass("active");
-                $(".content").load("html/hack.html", function() {initHack("peoplesmagazinegenerator");});
+                $(".content").load("html/hack.html", function() {initHack("peoplemagazinegenerator");});
                 break;
             case "popgossipusa":
                 $("#nav-hack").addClass("active");
